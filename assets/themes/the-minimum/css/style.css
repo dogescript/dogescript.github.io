@@ -232,7 +232,10 @@ pre {
   background: url('/assets/themes/the-minimum/skin/100-90-5-monochrome.png');
   background-repeat: repeat;
   background-position: 0 0;
-  background-color: #BADA55;
+
+  /* fun fact: this is the GitHub Dogescript color */
+  background-color: #CCA760;
+
   margin-bottom: 1.625em;
   padding-top: 1.625em;
   padding-bottom: 1.625em;
@@ -753,7 +756,7 @@ pre {
   }
 }
 /*
-	Not that old computer layout 
+	Not that old computer layout
 */
 @media only screen and (min-width: 1280px) {
   .the-header .unit-inner {
@@ -799,7 +802,7 @@ pre {
   }
 }
 /*
-	Huge-screen layout 
+	Huge-screen layout
 */
 @media only screen and (min-width: 1410px) {
   .the-header .unit-inner {

@@ -101,7 +101,8 @@ So when you visit `./wiki` it nicely shows all wiki pages.
 ## Credits
 
 This site uses [Jekyll Bootstrap][boots] with a heavily customized version of
-[the_minimum][theme] theme.
+[the_minimum][theme] theme, made by [Yuya Saito][theme_author]. For more info
+on it, see the file `assets/themes/the-minimum/readme.markdown`.
 
 [home]:         http://dogescript.com/
 [hub]:          https://github.com/dogescript/dogescript/
@@ -111,6 +112,7 @@ This site uses [Jekyll Bootstrap][boots] with a heavily customized version of
 [tuto]:         http://jekyllbootstrap.com/usage/jekyll-quick-start.html
 [intro]:        http://jekyllbootstrap.com/lessons/jekyll-introduction.html
 [boots]:        http://jekyllbootstrap.com/
-[theme]:        https://github.com/jekyllbootstrap/theme-the-program
+[theme]:        https://github.com/studiomohawk/jekyll-theme-the_minimum
+[theme_author]: http://layouts-the.me/
 [posts]:        http://jekyllrb.com/docs/posts/
 
