@@ -1,0 +1,9 @@
+<script type="text/javascript">
+    !function(W,o,w,s,u,c,h){W.GoogleAnalyticsObject=u,W[u]=W[u]||function(){
+    (W[u].q=W[u].q||[]).push(arguments)},W[u].l=+new Date,c=o.createElement(w),
+    h=o.getElementsByTagName(w)[0],c.src=s,h.parentNode.insertBefore(c,h)
+    }(this,document,"script","//www.google-analytics.com/analytics.js","ga");
+
+    ga('create', '{{ site.JB.analytics.google.tracking_id }}', '{{ site.JB.analytics.google.domain }}');
+    ga('send', 'pageview');
+</script>
