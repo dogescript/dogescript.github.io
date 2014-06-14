@@ -71,7 +71,7 @@ $ dogescript location/to/script.djs
 $ dogescript location/to/script.djs > final.js
 {% endhighlight %}
 
-For more info, see [the Tutorials page on the Wiki](/wiki/Tutorials.html) and the links below.
+For more info, see [the Tutorials page on the Wiki](/wiki/Tutorials) and the links below.
 
 ## Links
 
