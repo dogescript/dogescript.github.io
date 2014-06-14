@@ -88,6 +88,17 @@ work as a page.
 
 So when you visit `./wiki` it nicely shows all wiki pages.
 
+## Important files
+
+This repository has lots of files, each with it's well-defined importance.
+
+Please prefer editing the files below:
+
+| file | role |
+| ---- | ---- |
+| `assets/theme/the-minimum/css/style.css` | Place custom CSS at the end of it |
+| `_includes/themes/the-minimum/*.html`    | All reusable pieces of HTML used everywhere |
+
 ## Notes
 
 * When producing content (writing pages/posts) keep in mind

@@ -853,3 +853,88 @@ pre {
     margin-right: 360px;
   }
 }
+
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * CUSTOM CSS
+ * ~place your CSS Hacks and exceptions below~
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+
+/* That image on the left of the logo */
+header img {
+	float          : left;
+	max-width      : 100%;
+	height         : 3.625em;
+	margin-right   : 1em;
+	vertical-align : middle;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+header p .logo {
+	width: inherit;
+}
+
+/* The first header on the description "Dogescript is..."*/
+ * Thanks, 3D CSS Generator!
+ * http://www.3dcsstext.com/
+ */
+#intro h1 {
+	line-height: 1em;
+	color: #f0db4f;
+	font-weight:bold;
+	font-size: 42px;
+	text-shadow:0px 0px 0 rgb(189,168,28),1px 1px 0 rgb(158,137,-3), 2px 2px 0 rgb(127,106,-34),3px 3px 2px rgba(0,0,0,0.05),3px 3px 1px rgba(0,0,0,0.5),0px 0px 2px rgba(0,0,0,.2);
+}
+
+/* Things on the footer */
+footer #footer-left {
+	width: 49%;
+	float: left;
+}
+footer #footer-right {
+	width: 49%;
+	float: right;
+}
+
+/* Only appears on the Wiki pages */
+#wiki-title {
+	float: left;
+}
+#wiki-button {
+	float: right;
+	line-height: 52px;
+
+	color: #050505;
+	background-color: #f0db4f;
+
+	padding: 0 10px;
+
+	border: none;
+
+	-moz-border-radius    : 5px;
+	-webkit-border-radius : 5px;
+	border-radius         : 5px;
+}
+#wiki-button:hover {
+	color: white;
+
+	/* sweet sweet CSS transition */
+    -webkit-transition : color 500ms linear;
+	-moz-transition    : color 500ms linear;
+	-o-transition      : color 500ms linear;
+	-ms-transition     : color 500ms linear;
+	transition         : color 500ms linear;
+}
+
+
+
+
+
+
+
