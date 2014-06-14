@@ -8,7 +8,7 @@
 # so be sure to set them if your theme uses them.
 #
 title   : dogescript
-tagline : the language of the future
+tagline : JavaScript for the moon.
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Custom values
@@ -111,7 +111,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyllbootstrap
+      short_name : dogescript
     livefyre :
       site_id : 123
     intensedebate :
@@ -130,6 +130,7 @@ JB :
     provider : google
     google :
         tracking_id : 'UA-123-12'
+        domain : 'dogescript.com'
     getclicky :
       site_id :
     mixpanel :
@@ -156,4 +157,3 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
-

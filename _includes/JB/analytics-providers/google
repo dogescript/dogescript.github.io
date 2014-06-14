@@ -1,11 +1,9 @@
 <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ site.JB.analytics.google.tracking_id }}']);
-  _gaq.push(['_trackPageview']);
+    !function(W,o,w,s,u,c,h){W.GoogleAnalyticsObject=u,W[u]=W[u]||function(){
+    (W[u].q=W[u].q||[]).push(arguments)},W[u].l=+new Date,c=o.createElement(w),
+    h=o.getElementsByTagName(w)[0],c.src=s,h.parentNode.insertBefore(c,h)
+    }(this,document,"script","//www.google-analytics.com/analytics.js","ga");
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    ga('create', '{{ site.JB.analytics.google.tracking_id }}', '{{ site.JB.analytics.google.domain }}');
+    ga('send', 'pageview');
 </script>

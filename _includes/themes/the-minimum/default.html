@@ -9,8 +9,9 @@
 	<meta name="author"      content="{{ site.title }}">
 	<meta name="description" content="{{ site.tagline }}">
 
-	<title>{{ page.title }}</title>
+	<title>Dogescript - {{ page.title }}</title>
 
+	<link href='http://fonts.googleapis.com/css?family=Arvo|Open+Sans' rel='stylesheet' type='text/css'>
 	<link href='{{ ASSET_PATH }}/css/style.css' rel="stylesheet" media="all">
 	<link href="http://feeds.feedburner.com/{{ site.author.feedbaname }}" rel="alternate" title="{{ page.title }}" type="application/atom+xml">
 
@@ -30,14 +31,15 @@
 
 			<nav class="nav-global">
 			  <ul>
-				<li> <a href="/live/">try online</a></li>
-				<li> <a href="/#download">download</a></li>
-				<li> <a href="/archive/">news</a></li>
-				<li> <a href="/wiki">wiki</a></li>
+				<li> <a href="/live/">try online</a> &nbsp;|</li>
+				<li> <a href="/#download">download</a> &nbsp;|</li>
+				<li> <a href="/archive/">bloge</a> &nbsp;|</li>
+				<li> <a href="/wiki">wiki</a> &nbsp;|</li>
+				<li> <a href="https://twitter.com/dogescript">twitter</a></li>
 			  </ul>
 
 			  <!-- Rad GitHub Buttons -->
-			  <ul>
+			  <ul style="padding-left: 87px">
 				<li class="forkme">
 				  <iframe id="watch" src="http://ghbtns.com/github-btn.html?user=dogescript&repo=dogescript&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>
 				</li>
@@ -67,33 +69,15 @@
 		  <div class="unit-inner unit-foot-inner">
 			<div id="footer-left">
 			  <div class="misc vcard">
-				<h4>about</h4>
-				<ul>
-				  <li class="contact"><a href="https://github.com/dogescript/" rel="me">github @dogescript</a></li>
-				  <li class="twitter"><a href="http://twitter.com/dogescript"  rel="me">twitter @dogescript</a></li>
-
-				</ul>
-			  </div><!-- misc -->
-
-			  <p class="licence">
-				<small>
-				  Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> and <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br />
-				  Design by <a href="http://alexdantas.net/">Alexandre Dantas</a>, based on <a href="http://layouts-the.me">the_minimum</a> by <a href="http://css.studiomohawk.com/">Yuya Saito</a>.
-				</small>
-			  </p>
-			</div>
-
-			<div id="footer-right">
-			  <h4>links</h4>
-			  <ul>
-				<li class="pages"><a href="/pages">All Pages</a></li>
-				<li class="tags"><a href="/tags">All Tags</a></li>
-				<li class="categories"><a href="/categories">All Categories</a></li>
-
-				<li class="atom"><a href="/atom.xml">Subscribe to Atom Feed</a></li>
-				<li class="rss"><a href="/rss.xml">Subscribe to RSS Feed</a></li>
-				<li class="rss"><a href="/sitemap.txt">Site Map</a></li>
-			  </ul>
+				<h4></h4>
+				  <p class="licence">
+					<small>
+					  This site is hosted on Github: <a href="https://github.com/dogescript/dogescript.github.io">dogescript/dogescript.github.io</a><br>
+					  Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> and <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br />
+					  Design by <a href="http://alexdantas.net/">Alexandre Dantas</a>, based on <a href="http://layouts-the.me">the_minimum</a> by <a href="http://css.studiomohawk.com/">Yuya Saito</a>.
+					</small>
+				  </p>
+			  </div>
 			</div>
 		  </div>
 		</div>
@@ -109,8 +93,6 @@
 		 fjs.parentNode.insertBefore(js, fjs);
 	   };
 	   load('//platform.twitter.com/widgets.js', 'tweetjs');
-	   // load('https://apis.google.com/js/plusone.js', 'gplus1js'); // Checkout http://j.mp/ApDgMr for usage html for this is <div class="g-plusone" data-size="medium"></div>
-	   // load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk'); // Checkout http://j.mp/wZw2xR for using open graph protorol html for this is <div class="fb-like" data-href="{{ page.url }}" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="verdana"></div>
 	 }(document, 'script'));
 	</script>
 
