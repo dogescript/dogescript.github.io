@@ -94,33 +94,12 @@ task :wiki do
   # Creating the final directory along with `index.html`
   # It will contain a huge list with all Wiki pages
   FileUtils.mkdir final_dir
-
-  File.open("#{final_dir}/index.md", 'w') do |file|
-    file.puts <<END_OF_INDEX_HTML
----
-layout: page
-title:  Wiki Index
----
-{% include JB/setup %}
-
-This is the index of all pages on the Dogescript wiki!
-[Click here for the main page](Home).
-
-<ul class="posts">
-  {% loop_directory directory:#{final_dir} iterator:file filter:* %}
-    {% if file != 'index.md' %}
-      <li><a href="{{ file }}">{{ file }}</a></li>
-    {% endif %}
-  {% endloop_directory %}
-</ul>
-END_OF_INDEX_HTML
-  end
+  FileUtils.mv "#{temporary_dir}/Home.md", "#{temporary_dir}/index.md"
 
   # For each markdown file inside the TemporaryWiki directory,
   # lets prepend it with the YAML metadata initializer AND
   # create a directory for it inside the FinalWiki
   Dir.glob("#{temporary_dir}/*.md") do |filename|
-
     puts "# Updating #{filename}..."
 
     # Creating temporary file to hold the header
@@ -128,12 +107,16 @@ END_OF_INDEX_HTML
     # If file was `wiki.tmp/Home.md` will create `wiki/Home/`
     # and put it inside `wiki/Home/index.html`
     #
+
     filename_sans_extension = File.basename(filename, File.extname(filename))
 
-    directory    = "#{final_dir}/#{filename_sans_extension}"
-    new_filename = "#{directory}/index.md"
-
-    FileUtils.mkdir directory
+    if filename_sans_extension == 'index'
+      new_filename = "#{final_dir}/index.md"
+    else
+      directory    = "#{final_dir}/#{filename_sans_extension}"
+      new_filename = "#{directory}/index.md"
+      FileUtils.mkdir directory
+    end
 
     File.open(new_filename, 'w') do |file|
       file.puts <<END_OF_HEADER

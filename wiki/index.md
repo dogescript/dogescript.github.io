@@ -1,16 +1,16 @@
 ---
-layout: page
-title:  Wiki Index
+layout: wiki
+title: index
 ---
 {% include JB/setup %}
+Welcome to the Dogescript wiki!
 
-This is the index of all pages on the Dogescript wiki!
-[Click here for the main page](Home).
+---
 
-<ul class="posts">
-  {% loop_directory directory:wiki iterator:file filter:* %}
-    {% if file != 'index.md' %}
-      <li><a href="{{ file }}">{{ file }}</a></li>
-    {% endif %}
-  {% endloop_directory %}
-</ul>
+Here's some interesting links:
+
+* [Dogescript homepage](http://dogescript.com)
+* [Dogescript Language Definition](https://github.com/dogescript/dogescript/blob/master/LANGUAGE.md)
+* [Dogescript Tutorials](https://github.com/dogescript/dogescript/wiki/Tutorials)
+* [Projects made _with_ Dogescript](../Projects)
+* [Utilities made _for_ Dogescript](../Utilities)
