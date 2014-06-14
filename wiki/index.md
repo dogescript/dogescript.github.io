@@ -1,4 +1,15 @@
 ---
+layout: wiki
+title: index
+---
+{% include JB/setup %}
+---
+layout: page
+title: Wiki - index
+tagline: Supporting tagline
+---
+{% include JB/setup %}
+---
 layout: page
 title: The Dogescript Wiki Index
 ---

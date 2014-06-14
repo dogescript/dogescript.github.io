@@ -194,3 +194,22 @@ footer #footer-right {
 	float: right;
 }
 
+/* Only appears on the Wiki pages */
+#wiki-title {
+	float: left;
+}
+#wiki-button {
+	float: right;
+
+	color: #050505;
+	background-color: #f0db4f;
+
+	padding: 0 10px;
+
+	border: none;
+
+	-moz-border-radius    : 5px;
+	-webkit-border-radius : 5px;
+	border-radius         : 5px;
+}
+

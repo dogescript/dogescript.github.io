@@ -96,9 +96,8 @@ task :wiki do
     File.open(new_filename, 'w') do |file|
       file.puts <<END_OF_HEADER
 ---
-layout: page
-title: Wiki - #{File.basename(filename, File.extname(filename))}
-tagline: Supporting tagline
+layout: wiki
+title: #{File.basename(filename, File.extname(filename))}
 ---
 {% include JB/setup %}
 END_OF_HEADER
