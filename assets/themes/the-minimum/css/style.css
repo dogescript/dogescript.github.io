@@ -763,7 +763,7 @@ pre {
     width: 60em;
   }
   .the-header .logo {
-    width: 26.25em;
+/*    width: 26.25em;   */
     float: left;
   }
   .the-header .nav-global {

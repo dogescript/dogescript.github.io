@@ -104,6 +104,12 @@ This site uses [Jekyll Bootstrap][boots] with a heavily customized version of
 [the_minimum][theme] theme, made by [Yuya Saito][theme_author]. For more info
 on it, see the file `assets/themes/the-minimum/readme.markdown`.
 
+The following is a list of sites that inspired me, both on the content and interface:
+
+* [Ruby](https://www.ruby-lang.org/en/)
+* [CoffeeScript](http://coffeescript.org/)
+* [TypeScript](http://www.typescriptlang.org/)
+
 [home]:         http://dogescript.com/
 [hub]:          https://github.com/dogescript/dogescript/
 [org]:          https://github.com/dogescript/
