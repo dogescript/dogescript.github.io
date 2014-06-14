@@ -65,19 +65,36 @@
 	  <footer class="the-footer">
 		<div class="unit-foot">
 		  <div class="unit-inner unit-foot-inner">
-			<div class="misc vcard">
-			  <h4>about</h4>
+			<div id="footer-left">
+			  <div class="misc vcard">
+				<h4>about</h4>
+				<ul>
+				  <li class="contact"><a href="https://github.com/dogescript/" rel="me">github @dogescript</a></li>
+				  <li class="twitter"><a href="http://twitter.com/dogescript"  rel="me">twitter @dogescript</a></li>
+
+				</ul>
+			  </div><!-- misc -->
+
+			  <p class="licence">
+				<small>
+				  Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> and <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br />
+				  Design by <a href="http://alexdantas.net/">Alexandre Dantas</a>, based on <a href="http://layouts-the.me">the_minimum</a> by <a href="http://css.studiomohawk.com/">Yuya Saito</a>.
+				</small>
+			  </p>
+			</div>
+
+			<div id="footer-right">
+			  <h4>links</h4>
 			  <ul>
-				<li class="contact"><address><span class="author fn n">{{ site.author.name }}</span> - <span class="fn email">{{ site.author.email }}</span></address></li>
-				<li class="github"><a href="http://github.com/{{ site.author.github }}/" rel="me">github.com/{{ site.author.github }}</a></li>
-				<li class="twitter"><a href="http://twitter.com/{{ site.author.twitter }}/" rel="me">twitter.com/{{ site.author.twitter }}</a></li>
-				<li class="rss"><a href="http://feeds.feedburner.com/{{ site.author.feedname }}">Subscribe to RSS Feed</a></li>
+				<li class="pages"><a href="/pages">All Pages</a></li>
+				<li class="tags"><a href="/tags">All Tags</a></li>
+				<li class="categories"><a href="/categories">All Categories</a></li>
+
+				<li class="atom"><a href="/atom.xml">Subscribe to Atom Feed</a></li>
+				<li class="rss"><a href="/rss.xml">Subscribe to RSS Feed</a></li>
+				<li class="rss"><a href="/sitemap.txt">Site Map</a></li>
 			  </ul>
-			</div><!-- misc -->
-			<p class="licence">
-			  Theme: <a href="http://layouts-the.me">the_minimum</a> based on <a href="http://jekyllbootstrap.com/">Jekyll-bootstrap</a>.<br>
-			  Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
-			</p>
+			</div>
 		  </div>
 		</div>
 	  </footer>
