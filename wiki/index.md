@@ -3,17 +3,6 @@ layout: wiki
 title: index
 ---
 {% include JB/setup %}
----
-layout: page
-title: Wiki - index
-tagline: Supporting tagline
----
-{% include JB/setup %}
----
-layout: page
-title: The Dogescript Wiki Index
----
-{% include JB/setup %}
 
 This is the index of all pages on the `Dogescript` wiki!
 [Click here for the main page](Home.html).

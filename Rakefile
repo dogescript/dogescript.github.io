@@ -89,6 +89,8 @@ task :wiki do
   # For each markdown file inside the Wiki directory,
   # lets prepend it with the YAML metadata initializer
   Dir.glob('wiki/*.md') do |filename|
+    next if filename =~ /index.md/
+
     puts "Updating #{filename}..."
 
     # Creating temporary file to hold the header
