@@ -27,7 +27,7 @@ module Jekyll
 
       @attributes['directory'] = '.';
       @attributes['iterator']  = 'file';
-      @attributes['filter']    = 'item';
+      @attributes['filter']    = '*';
       @attributes['sort']      = 'ascending';
 
       # Parse parameters

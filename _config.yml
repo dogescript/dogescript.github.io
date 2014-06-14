@@ -27,6 +27,7 @@ val:
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Site Build options
 #
+# Used by Jekyll and Rake to generate the final website
 
 # Markdown interpreter (moved away from Maruku)
 markdown : kramdown

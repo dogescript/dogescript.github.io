@@ -1,7 +1,8 @@
-require "rubygems"
+require 'rubygems'
 require 'rake'
 require 'yaml'
 require 'time'
+require 'fileutils' # for the Wiki thingy
 
 SOURCE = "."
 CONFIG = {
@@ -48,17 +49,16 @@ end #JB
 #     $ rake wiki name="github-user/github-repo"
 #
 # And then it will:
-# * Clone the wiki repository on the `./wiki` directory
-#   (if it's not there)
+# * Clone the wiki repository on `./wiki.tmp` directory
+# * Create the directory `./wiki` that will contain the final pages
+# * Go through each file on `./wiki.tmp`, process it and
+#   create a corresponding one at `./wiki`
+# * Delete `./wiki.tmp`
 #
-# or
-#
-# * Refresh (pull) the changes from the `./wiki` directory
-#   (if it's there)
+# NOTE: I *know* it's very ugly, I *have* to take a look on that.
 #
 desc "Pulls GitHub Wiki files changes to this site"
 task :wiki do
-
   name = ENV["name"].to_s.downcase
 
   if name.empty?
@@ -69,37 +69,77 @@ task :wiki do
 
   repo = "https://github.com/#{name}.wiki"
 
-  if File.exist? "wiki/.git"
-    # If the repository was already cloned, let's
-    # check it out and pull the latest commit
-    puts "Updating git repo..."
+  final_dir     = 'wiki'
+  temporary_dir = 'wiki.tmp'
 
-    if not system("cd wiki && git checkout . && git pull && cd ..")
-      abort("Couldn't update git repo!")
-    end
-  else
-    # If the repository wasn't cloned, let's do it!
-    puts "Cloning git repo..."
+  # Safecheck to avoid duplicating the temporary directory
+  if File.exist? final_dir
+    puts "# Clearing old Wiki files..."
 
-    if not system("git clone #{repo} wiki")
-        abort("Git clone failed! Tried from '#{repo}'")
-    end
+    FileUtils.remove_entry_secure(final_dir, force:true)
+  end
+  if File.exist? temporary_dir
+    puts "# Clearing old temporary files..."
+
+    FileUtils.remove_entry_secure(temporary_dir, force:true)
   end
 
-  # For each markdown file inside the Wiki directory,
-  # lets prepend it with the YAML metadata initializer
-  Dir.glob('wiki/*.md') do |filename|
-    next if filename =~ /index.md/
+  # Cloning the repository into a temporary directory
+  puts "# Cloning from #{repo}"
 
-    puts "Updating #{filename}..."
+  if not system("git clone #{repo} #{temporary_dir}")
+    abort("Git clone failed! Tried from '#{repo}'")
+  end
+
+  # Creating the final directory along with `index.html`
+  # It will contain a huge list with all Wiki pages
+  FileUtils.mkdir final_dir
+
+  File.open("#{final_dir}/index.md", 'w') do |file|
+    file.puts <<END_OF_INDEX_HTML
+---
+layout: page
+title:  Wiki Index
+---
+{% include JB/setup %}
+
+This is the index of all pages on the Dogescript wiki!
+[Click here for the main page](Home).
+
+<ul class="posts">
+  {% loop_directory directory:#{final_dir} iterator:file filter:* %}
+    {% if file != 'index.md' %}
+      <li><a href="{{ file }}">{{ file }}</a></li>
+    {% endif %}
+  {% endloop_directory %}
+</ul>
+END_OF_INDEX_HTML
+  end
+
+  # For each markdown file inside the TemporaryWiki directory,
+  # lets prepend it with the YAML metadata initializer AND
+  # create a directory for it inside the FinalWiki
+  Dir.glob("#{temporary_dir}/*.md") do |filename|
+
+    puts "# Updating #{filename}..."
 
     # Creating temporary file to hold the header
-    new_filename = filename + '.new'
+    #
+    # If file was `wiki.tmp/Home.md` will create `wiki/Home/`
+    # and put it inside `wiki/Home/index.html`
+    #
+    filename_sans_extension = File.basename(filename, File.extname(filename))
+
+    directory    = "#{final_dir}/#{filename_sans_extension}"
+    new_filename = "#{directory}/index.md"
+
+    FileUtils.mkdir directory
+
     File.open(new_filename, 'w') do |file|
       file.puts <<END_OF_HEADER
 ---
 layout: wiki
-title: #{File.basename(filename, File.extname(filename))}
+title: #{filename_sans_extension}
 ---
 {% include JB/setup %}
 END_OF_HEADER
@@ -110,11 +150,12 @@ END_OF_HEADER
         file.puts original_line
       end
     end
-
-    File.rename(new_filename, filename)
   end
 
-  puts "Wiki updated!"
+  puts "# Clearing temporary files..."
+  FileUtils.remove_entry_secure(temporary_dir, force:true)
+
+  puts "# Wiki updated!"
 end
 # CUSTOM
 # CUSTOM
