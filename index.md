@@ -1,7 +1,6 @@
 ---
 layout: page
 title: JavaScript for the moon.
-tagline: Supporting tagline
 ---
 <!-- ...everything's a mess, so I'll have to
    - guide you through these comments... -->

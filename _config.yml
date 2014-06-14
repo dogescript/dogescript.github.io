@@ -129,7 +129,7 @@ JB :
   analytics :
     provider : google
     google :
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-51730971-1'
         domain : 'dogescript.com'
     getclicky :
       site_id :
