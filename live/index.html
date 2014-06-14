@@ -1,0 +1,54 @@
+---
+layout: raw
+---
+
+<style>
+ .codebox {
+   width              : 49.9%;
+   max-width          : 49.9%;
+   min-width          : 49.9%;
+   height             : 600px;
+   font-family        : monospace;
+   font-size          : 16px;
+   resize             : none;
+   -webkit-box-sizing : border-box;
+   -moz-box-sizing    : border-box;
+   box-sizing         : border-box;
+ }
+ #textareas {
+   margin : 10px 0;
+   width  : 100%;
+   height : auto;
+ }
+ #dogescript {
+   float : left;
+ }
+ #javascript {
+   float : right;
+ }
+
+ p {
+   margin: 0;
+   text-align: center;
+ }
+</style>
+
+
+<p>type for great instant compile wow</p>
+<p>
+  <a href="https://github.com/dogescript/dogescript/blob/master/LANGUAGE.md">
+	such spec, very documented
+  </a>
+</p>
+
+
+<!-- Magic placeholders where everything happens -->
+<div id="textareas">
+  <textarea id="dogescript" class="codebox"></textarea>
+  <textarea id="javascript" class="codebox"></textarea>
+</div>
+
+<!-- Magic scripts that make everything work -->
+<script src="/assets/js/behave.min.js"></script>
+<script src="/assets/js/bundle.min.js"></script>
+
