@@ -94,7 +94,6 @@ task :wiki do
   # Creating the final directory along with `index.html`
   # It will contain a huge list with all Wiki pages
   FileUtils.mkdir final_dir
-  FileUtils.mv "#{temporary_dir}/Home.md", "#{temporary_dir}/index.md"
 
   # For each markdown file inside the TemporaryWiki directory,
   # lets prepend it with the YAML metadata initializer AND
@@ -110,7 +109,7 @@ task :wiki do
 
     filename_sans_extension = File.basename(filename, File.extname(filename))
 
-    if filename_sans_extension == 'index'
+    if filename_sans_extension == 'Home'
       new_filename = "#{final_dir}/index.md"
     else
       directory    = "#{final_dir}/#{filename_sans_extension}"

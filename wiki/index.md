@@ -1,6 +1,6 @@
 ---
 layout: wiki
-title: index
+title: Home
 ---
 {% include JB/setup %}
 Welcome to the Dogescript wiki!
