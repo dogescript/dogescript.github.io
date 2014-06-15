@@ -67,7 +67,6 @@ window.addEventListener('resize', function(e) {
 });
 
 var shareBtn = document.querySelector('.js-share-code');
-
 shareBtn.addEventListener('click', function (e) {
     var encoded = utf8_to_b64(inputMirror.getValue());
     location.hash = encoded;
