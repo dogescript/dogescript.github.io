@@ -44,8 +44,8 @@ inputMirror.on('change', function () {
 });
 
 // using js to style because why not
-inputWrapper.style.float = 'left';
-outputWrapper.style.float = 'right';
+inputWrapper.style.cssFloat = 'left';
+outputWrapper.style.cssFloat = 'right';
 
 function fixSize() {
     var top = input.getBoundingClientRect().top + document.body.scrollTop;
