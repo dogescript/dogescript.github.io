@@ -10,7 +10,7 @@ title: JavaScript for the moon.
 <!-- INTRODUCTION TEXT -->
 Dogescript is a programming language that compiles into JavaScript. While JavaScript is a beautiful language, it's not quite Doge friendly. Thankfully, Dogescript fixes that, so that your code can truly go to the moon.
 
-<a id="wiki-button" href="/live">Try online</a>
+<a id="yellow-btn" href="/live">Try online</a>
 
 ## Example
 

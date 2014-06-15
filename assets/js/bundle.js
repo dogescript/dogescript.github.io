@@ -2,30 +2,57 @@
 var dogescript = require('dogescript');
 
 
+// https://developer.mozilla.org/en-US/docs/Web/API/window.btoa
+function utf8_to_b64( str ) {
+  return window.btoa(unescape(encodeURIComponent( str )));
+}
+function b64_to_utf8( str ) {
+  return decodeURIComponent(escape(window.atob( str )));
+}
+
 var input  = document.getElementById('dogescript');
 var output = document.getElementById('javascript');
 
-var editor = new Behave({
-    textarea: input,
-    replaceTab: true,
-    softTabs: true,
-    tabSize: 4,
-    autoOpen: true,
-    overwrite: true,
-    autoStrip: true,
-    autoIndent: true,
-    fence: false
+if (location.hash !== '') {
+    var hash = location.hash.substring(1);
+
+    var decoded = b64_to_utf8(hash);
+    input.value = decoded;
+    output.value = dogescript(input.value, true);
+} else {
+    var content = "shh THIS IS DOGESCRIPT\n\nquiet\n    dogescript was created by Zach Bruggeman\n    and has been improved by many contributors\n    such appreciate, much thanks, wow\nloud\n\ntrained\n\nso dogeudle\nso boring as wow\n\nvery dogescript is 'such messy; very doge-friendly'\n\nsuch woof much foo bar bat\n    plz console.loge with foo\n    such nested\n        plz console.loge with ['so', 'wow']\n    wow\n    plz nested\nwow bar\n\nplz woof with 'multiple', 'doge', 'properties wow'\n\nvery cat is 'not a doge'\n\nrly cat is 'doge'\n    plz console.loge with 'wow, such liar, much cat'\nbut rly cat is 'not a doge'\n    plz console.loge with 'very truth, such belief, wow'\nbut\n    plz console.loge with 'such impossible'\nwow\n\nmany woof is 'doges only' and cat not 'doge' or cat is 'not a doge'\n    plz console.loge with {such: 'doge'}\nwow\n\nrly woof is 'doges only' and cat not 'doge' or cat is 'not a doge'\n    plz console.loge with {such: 'doge', wow: 'dogee'}\nwow\n\nmuch very woof as 1 next woof smaller 3 next woof more 1\n    plz console.loge with {such: 'doge'}\nwow\n\nshh doge style\nvery science is 4\n           much  very so as 1 next so smaller 10 next so more 1\n    rly so bigger 2\n                   plz console.loge with {such: so}\n      wow\n                      wow\n\n\nshh chaining\nvery canvas is plz d3.select with 'body'&\ndose append with 'canvas'&\ndose attr with 'width', width&\ndose attr with 'height', height\n\nvery regex is new RegExp with keyword, 'g'\nvery regex2 is new RegExp with 'doge', 'g'\n\nvery arr is new Array with 0\n\nobj is new Object\n\nmodule.exports is woof\n\nshh example http server\nso http\nhttp dose createServer with much req res\n   res dose writeHead with 200 {'Content-Type': 'text/plain'}\n   res dose end with 'so hello\\nmuch world'\nwow&\n.plz listen with 8080\n\nwindoge.doge is 'so global, no scope wow'\nvery dogelement is plz dogeument.createElement with 'doge'\n\nmaybe\n";
+    input.value = content;
+    output.value = dogescript(input.value, true);
+}
+
+var inputMirror = CodeMirror.fromTextArea(input, {
+    lineNumbers: true,
+    autofocus: true,
+    mode: null
+});
+var outputMirror = CodeMirror.fromTextArea(output, {
+    lineNumbers: true,
+    readOnly: true,
+    mode: 'javascript'
 });
 
-BehaveHooks.add('keyup', function(data){
-    output.value = dogescript(input.value, true);
+var inputWrapper = inputMirror.display.wrapper;
+var outputWrapper = outputMirror.display.wrapper;
+
+inputMirror.on('change', function () {
+    var compiled = dogescript(inputMirror.getValue(), true);
+    outputMirror.setValue(compiled);
 });
+
+// using js to style because why not
+inputWrapper.style.float = 'left';
+outputWrapper.style.float = 'right';
 
 function fixSize() {
     var top = input.getBoundingClientRect().top + document.body.scrollTop;
-    var height = (window.innerHeight - top - 10) + 'px';
-    input.style.height = height;
-    output.style.height = height; 
+    var height = (window.innerHeight - top - 300) + 'px';
+    inputWrapper.style.height = height;
+    outputWrapper.style.height = height; 
 }
 
 fixSize();
@@ -39,9 +66,17 @@ window.addEventListener('resize', function(e) {
     debounce = setTimeout(fixSize, 50);
 });
 
-var content = "shh THIS IS DOGESCRIPT\n\nquiet\n    dogescript was created by Zach Bruggeman\n    and has been improved by many contributors\n    such appreciate, much thanks, wow\nloud\n\ntrained\n\nso dogeudle\nso boring as wow\n\nvery dogescript is 'such messy; very doge-friendly'\n\nsuch woof much foo bar bat\n    plz console.loge with foo\n    such nested\n        plz console.loge with ['so', 'wow']\n    wow\n    plz nested\nwow bar\n\nplz woof with 'multiple', 'doge', 'properties wow'\n\nvery cat is 'not a doge'\n\nrly cat is 'doge'\n    plz console.loge with 'wow, such liar, much cat'\nbut rly cat is 'not a doge'\n    plz console.loge with 'very truth, such belief, wow'\nbut\n    plz console.loge with 'such impossible'\nwow\n\nmany woof is 'doges only' and cat not 'doge' or cat is 'not a doge'\n    plz console.loge with {such: 'doge'}\nwow\n\nrly woof is 'doges only' and cat not 'doge' or cat is 'not a doge'\n    plz console.loge with {such: 'doge', wow: 'dogee'}\nwow\n\nmuch very woof as 1 next woof smaller 3 next woof more 1\n    plz console.loge with {such: 'doge'}\nwow\n\nshh doge style\nvery science is 4\n           much  very so as 1 next so smaller 10 next so more 1\n    rly so bigger 2\n                   plz console.loge with {such: so}\n      wow\n                      wow\n\n\nshh chaining\nvery canvas is plz d3.select with 'body'&\ndose append with 'canvas'&\ndose attr with 'width', width&\ndose attr with 'height', height\n\nvery regex is new RegExp with keyword, 'g'\nvery regex2 is new RegExp with 'doge', 'g'\n\nvery arr is new Array with 0\n\nobj is new Object\n\nmodule.exports is woof\n\nshh example http server\nso http\nhttp dose createServer with much req res\n   res dose writeHead with 200 {'Content-Type': 'text/plain'}\n   res dose end with 'so hello\\nmuch world'\nwow&\n.plz listen with 8080\n\nwindoge.doge is 'so global, no scope wow'\nvery dogelement is plz dogeument.createElement with 'doge'\n\nmaybe\n";
-input.value = content;
-output.value = dogescript(input.value, true);
+var shareBtn = document.querySelector('.js-share-code');
+
+shareBtn.addEventListener('click', function (e) {
+    var encoded = utf8_to_b64(inputMirror.getValue());
+    location.hash = encoded;
+    shareBtn.innerText = 'Check your location bar!';
+    setTimeout(function () {
+        shareBtn.innerText = 'Create code URL';
+    }, 1500);
+    e.preventDefault();
+}, false);
 
 },{"dogescript":2}],2:[function(require,module,exports){
 /**

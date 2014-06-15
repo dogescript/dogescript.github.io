@@ -3,28 +3,17 @@ layout: raw
 title: Try Online
 ---
 
+<link href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.2.0/codemirror.css" type="text/css" rel="stylesheet">
 <style>
- .codebox {
-   width              : 49.9%;
-   max-width          : 49.9%;
-   min-width          : 49.9%;
-   height             : 600px;
-   font-family        : monospace;
-   font-size          : 16px;
-   resize             : none;
-   -webkit-box-sizing : border-box;
-   -moz-box-sizing    : border-box;
-   box-sizing         : border-box;
- }
  #textareas {
-   width  : 100%;
+   width  : 95%;
    height : auto;
+   margin: 0 auto;
  }
- #dogescript {
-   float : left;
- }
- #javascript {
-   float : right;
+
+ .CodeMirror {
+  width: 49.5%;
+  border: 1px solid #ddd;
  }
 
  .custom-header p {
@@ -32,8 +21,26 @@ title: Try Online
    text-align: center;
  }
 
- /* THIS IS A HUGE HACK TO ELIMINATE THE FOOTER
-  * ONLY ON THIS PAGE */
+ .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: url('/assets/themes/the-minimum/skin/100-90-5-monochrome.png');
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-color: #CCA760;
+  padding: 20px;
+  -webkit-box-sizing : border-box;
+  -moz-box-sizing    : border-box;
+  box-sizing         : border-box;
+ }
+
+ #yellow-btn {
+  margin-right: 5px;
+ }
+
+ /* Page hacks */
  footer {
    display: none;
  }
@@ -42,23 +49,20 @@ title: Try Online
  }
 </style>
 
-<!-- Overriding default theme style (hacks, I know!) -->
-<header class="custom-header" style="margin-bottom:5px;padding-top:0;padding-bottom:0">
-  <p>type for great instant compile wow</p>
-  <p>
-	<a href="https://github.com/dogescript/dogescript/blob/master/LANGUAGE.md">
-	  such spec, very documented
-	</a>
-  </p>
-</header>
-
 <!-- Magic placeholders where everything happens -->
 <div id="textareas">
-  <textarea id="dogescript" class="codebox"></textarea>
-  <textarea id="javascript" class="codebox"></textarea>
+  <textarea id="dogescript"></textarea>
+  <textarea id="javascript"></textarea>
+</div>
+
+<div class="footer">
+  <a id="yellow-btn" class="js-share-code" href="#">Create code URL</a>
+  <a id="yellow-btn" href="#" onclick="TogetherJS(this); return false;">Collaborate</a>
+  <a id="yellow-btn" href="https://github.com/dogescript/dogescript/blob/master/LANGUAGE.md">Language spec</a>
 </div>
 
 <!-- Magic scripts that make everything work -->
-<script src="/assets/js/behave.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.2.0/codemirror.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.2.0/mode/javascript/javascript.js"></script>
+<script src="//togetherjs.com/togetherjs-min.js"></script>
 <script src="/assets/js/bundle.min.js"></script>
-

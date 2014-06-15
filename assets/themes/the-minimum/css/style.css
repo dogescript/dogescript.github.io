@@ -181,10 +181,10 @@ a:hover {
   text-decoration: none;
 }
 /* HIGHLIGHTER */
-pre {
+.highlight pre {
   margin-bottom: 1.625em;
 }
-pre {
+.highlight pre {
   color: #f2f2f2;
   background-color: #393939;
   border: 1px solid #393939;
@@ -885,30 +885,29 @@ header p .logo {
 #wiki-title {
   float: left;
 }
-#wiki-button {
+
+/* General button style (reset) */
+#yellow-btn {
+  position: relative;
+  border: none;
+  background: #f0db4f;
+  color: #000000;
+  box-shadow: 0 6px #f0c14f;
+  padding: 0 10px;
+  border-radius: 5px;
   float: right;
   line-height: 52px;
-
-  color: #050505;
-  background-color: #f0db4f;
-
-  padding: 0 10px;
-
-  border: none;
-
-  -moz-border-radius    : 5px;
-  -webkit-border-radius : 5px;
-  border-radius         : 5px;
+  font-family: 'Arvo', serif;
 }
-#wiki-button:hover {
-  background-color: #ead96b;
 
-  /* sweet sweet CSS transition */
-    -webkit-transition : background-color 0.1s linear;
-  -moz-transition    : background-color 0.1s linear;
-  -o-transition      : background-color 0.1s linear;
-  -ms-transition     : background-color 0.1s linear;
-  transition         : background-color 0.1s linear;
+#yellow-btn:hover {
+  box-shadow: 0 4px #f0c14f;
+  top: 2px;
+}
+
+#yellow-btn:active {
+  box-shadow: 0 0 #f0c14f;
+  top: 6px;
 }
 
 .tweets {
