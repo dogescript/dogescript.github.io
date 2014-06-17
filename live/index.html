@@ -1,68 +1,171 @@
----
-layout: raw
-title: Try Online
----
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7 ie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width,initial-scale=1">
+	<meta name="author"      content="dogescript">
+	<meta name="description" content="dogescript, the language of the future">
 
-<link href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.2.0/codemirror.css" type="text/css" rel="stylesheet">
-<style>
- #textareas {
-   width  : 95%;
-   height : auto;
-   margin: 0 auto;
- }
+	<title>Try Dogescript Online!</title>
 
- .CodeMirror {
-  width: 49.5%;
-  border: 1px solid #ddd;
- }
+	<!-- STYLESHEETS -->
+	<link href='http://fonts.googleapis.com/css?family=Arvo|Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='/assets/themes/the-minimum/css/style.css' rel="stylesheet" media="all">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.2.0/codemirror.css" type="text/css" rel="stylesheet">
+	<style>
+	  /* expanding the top header */
+	 .unit-head .unit-inner {
+	   width: 95%;
+	 }
 
- .custom-header p {
-   margin: 0;
-   text-align: center;
- }
+	 /* things inside the top header */
+	 .the-header #yellow-btn {
+	   margin : 0 5px;
+	   float  : left;
+	 }
+	 .the-header .logo {
+	   margin-right : 10px;
+	 }
 
- .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background: url('/assets/themes/the-minimum/skin/100-90-5-monochrome.png');
-  background-repeat: repeat;
-  background-position: 0 0;
-  background-color: #CCA760;
-  padding: 20px;
-  -webkit-box-sizing : border-box;
-  -moz-box-sizing    : border-box;
-  box-sizing         : border-box;
- }
+	 /* the top header itself */
+	 .the-header {
+	   background          : url('/assets/themes/the-minimum/skin/100-90-5-monochrome.png');
+	   background-repeat   : repeat;
+	   background-position : 0 0;
+	   background-color    : #CCA760;
+	 }
+	 .the-header .unit-inner {
+	   padding-top: 10px;
+	 }
 
- #yellow-btn {
-  margin-right: 5px;
- }
+	.the-header .nav-global {
+	  width: 30%;
+	  }
+	.the-header ul li {
+	  float: right;
+	}
 
- /* Page hacks */
- footer {
-   display: none;
- }
- html {
-   overflow-y: hidden;
- }
-</style>
+	 #textareas {
+  	   width  : 95%;
+  	   height : auto;
+	   margin : 0 auto;
+	 }
 
-<!-- Magic placeholders where everything happens -->
-<div id="textareas">
-  <textarea id="dogescript"></textarea>
-  <textarea id="javascript"></textarea>
-</div>
+	 .CodeMirror {
+	   width  : 49.5%;
+	   border : 1px solid #ddd;
+	 }
 
-<div class="footer">
-  <a id="yellow-btn" class="js-share-code" href="#">Create code URL</a>
-  <a id="yellow-btn" href="#" onclick="TogetherJS(this); return false;">Collaborate</a>
-  <a id="yellow-btn" href="https://github.com/dogescript/dogescript/blob/master/LANGUAGE.md">Language spec</a>
-</div>
+	 .custom-header p {
+	   margin: 0;
+	   text-align: center;
+	 }
 
-<!-- Magic scripts that make everything work -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.2.0/codemirror.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.2.0/mode/javascript/javascript.js"></script>
-<script src="//togetherjs.com/togetherjs-min.js"></script>
-<script src="/assets/js/bundle.min.js"></script>
+	 /* Page hacks */
+	 html {
+	   overflow-y: hidden;
+	 }
+	</style>
+
+	<!-- All scripts at the end of `body` -->
+  </head>
+
+  <body>
+	<div id="page" class="hentry">
+
+	  <!-- Le header -->
+	  <header class="the-header">
+		<div class="unit-head">
+		  <div class="unit-inner unit-head-inner">
+
+			<img src="/assets/img/logo-small.png" />
+			<p class="logo"><a href="/">dogescript</a></p>
+
+			<a id="yellow-btn" class="js-share-code" href="#">Create code URL</a>
+			<a id="yellow-btn" href="#" onclick="TogetherJS(this); return false;">Collaborate</a>
+			<a id="yellow-btn" href="https://github.com/dogescript/dogescript/blob/master/LANGUAGE.md">Language spec</a>
+
+			<nav class="nav-global">
+			  <ul>
+				<li> <a href="/live/">try online</a> &nbsp;|</li>
+				<li> <a href="/#download">download</a> &nbsp;|</li>
+				<li> <a href="/archive/">bloge</a> &nbsp;|</li>
+				<li> <a href="/wiki">wiki</a> &nbsp;|</li>
+				<li> <a href="https://twitter.com/dogescript">twitter</a></li>
+			  </ul>
+
+			  <!-- Rad GitHub Buttons -->
+			  <ul style="padding-left: 87px">
+				<li class="forkme">
+				  <iframe id="watch" src="http://ghbtns.com/github-btn.html?user=dogescript&repo=dogescript&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>
+				</li>
+				<li class="forkme">
+				  <iframe id="fork" src="http://ghbtns.com/github-btn.html?user=dogescript&repo=dogescript&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="80" height="20"></iframe>
+				</li>
+			  </ul>
+			</nav>
+		  </div>
+		</div>
+	  </header>
+
+	  <!-- Le body -->
+	  <div class="body" role="main">
+		<div class="unit-body">
+		  <div class="unit-inner unit-body-inner">
+			<div class="entry-content">
+
+
+
+
+			  <!-- Magic placeholders where everything happens -->
+			  <div id="textareas">
+				<textarea id="dogescript"></textarea>
+				<textarea id="javascript"></textarea>
+			  </div>
+
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	</div>
+
+	<!-- ALL THEM SCRIPTS -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.2.0/codemirror.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/codemirror/4.2.0/mode/javascript/javascript.js"></script>
+	<script src="//togetherjs.com/togetherjs-min.js"></script>
+	<script src="/assets/js/bundle.min.js"></script>
+
+	<script>
+	  (function(d, s) {
+	  var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+	  if (d.getElementById(id)) {return;}
+	  js = d.createElement(s); js.src = url; js.id = id;
+	  fjs.parentNode.insertBefore(js, fjs);
+	  };
+	  load('//platform.twitter.com/widgets.js', 'tweetjs');
+	  }(document, 'script'));
+	</script>
+
+	<script>
+	  /*! A fix for the iOS orientationchange zoom bug.Script by @scottjehl, rebound by @wilto. MIT License.*/
+	  (function(j){var i=j.document;if(!i.querySelectorAll){return}var l=i.querySelectorAll("meta[name=viewport]")[0],a=l&&l.getAttribute("content"),h=a+", maximum-scale=1.0",d=a+", maximum-scale=10.0",g=true,c=j.orientation,k=0;if(!l){return}function f(){l.setAttribute("content",d);g=true}function b(){l.setAttribute("content",h);g=false}function e(m){c=Math.abs(j.orientation);k=Math.abs(m.gamma);if(k>8&&c===0){if(g){b()}}else{if(!g){f()}}}j.addEventListener("orientationchange",f,false);j.addEventListener("deviceorientation",e,false)})(this);
+    </script>
+
+	<!-- Analytics -->
+	<script type="text/javascript">
+	      !function(W,o,w,s,u,c,h){W.GoogleAnalyticsObject=u,W[u]=W[u]||function(){
+	      (W[u].q=W[u].q||[]).push(arguments)},W[u].l=+new Date,c=o.createElement(w),
+	      h=o.getElementsByTagName(w)[0],c.src=s,h.parentNode.insertBefore(c,h)
+	      }(this,document,"script","//www.google-analytics.com/analytics.js","ga");
+
+	      ga('create', 'UA-51730971-1', 'dogescript.com');
+	      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
