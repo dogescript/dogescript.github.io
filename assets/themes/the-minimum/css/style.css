@@ -751,15 +751,9 @@ a:hover {
   .the-header .unit-inner {
     width: 60em;
   }
-  .the-header .logo {
-/*    width: 26.25em;   */
-    float: left;
-  }
   .the-header .nav-global {
     margin-top: 21px;
-    text-align: right;
     width: 26.25em;
-    float: right;
   }
   .unit-article .unit-head-inner,
   .unit-article .entry-content,
@@ -796,9 +790,6 @@ a:hover {
 @media only screen and (min-width: 1410px) {
   .the-header .unit-inner {
     width: 88.125em;
-  }
-  .the-header .logo {
-    width: 43.125em;
   }
   .the-header .nav-global {
     width: 43.125em;
@@ -908,6 +899,15 @@ header p .logo {
 #yellow-btn:active {
   box-shadow: 0 0 #f0c14f;
   top: 6px;
+}
+
+.the-header .nav-global {
+  float: right;
+  text-align: right;
+}
+
+.the-header .logo {
+  float: left;
 }
 
 .tweets {

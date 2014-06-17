@@ -49,7 +49,7 @@ outputWrapper.style.cssFloat = 'right';
 
 function fixSize() {
     var top = input.getBoundingClientRect().top + document.body.scrollTop;
-    var height = (window.innerHeight - top - 300) + 'px';
+    var height = (window.innerHeight - top - 170) + 'px';
     inputWrapper.style.height = height;
     outputWrapper.style.height = height; 
 }
