@@ -121,7 +121,7 @@ The following is a list of sites that inspired me, both on the content and inter
 * [CoffeeScript](http://coffeescript.org/)
 * [TypeScript](http://www.typescriptlang.org/)
 
-[home]:         http://dogescript.com/
+[home]:         http://dogescript.io/
 [hub]:          https://github.com/dogescript/dogescript/
 [org]:          https://github.com/dogescript/
 [jekyll]:       http://jekyllrb.com/
