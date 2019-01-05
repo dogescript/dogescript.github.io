@@ -3,7 +3,7 @@ layout: wiki
 title: Utilities
 ---
 {% include JB/setup %}
-List of things that were made to interact with Dogescript it any way.
+List of things that were made to interact with Dogescript in any way.
 
 ## Syntax Highlighting
 
