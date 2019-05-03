@@ -65,9 +65,14 @@ very regex2 is new RegExp with 'doge', 'g'
 
 very arr is new Array with 0
 
-obj is new Object
+very myObj is new Object
 
-module.exports is woofn
+jsony is obj
+ name: 'blah'
+wow
+
+shh module.exports = woofn
+woof woofn
 
 shh example http server
 so http
