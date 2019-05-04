@@ -13,7 +13,7 @@ so boring as wow
 
 very dogescript is 'such messy; very doge-friendly'
 
-such woof much foo bar bat
+such woofn much foo bar bat
     plz console.loge with foo
     such nested
         plz console.loge with ['so', 'wow']
@@ -21,7 +21,7 @@ such woof much foo bar bat
     plz nested
 wow bar
 
-plz woof with 'multiple', 'doge', 'properties wow'
+plz woofn with 'multiple', 'doge', 'properties wow'
 
 very cat is 'not a doge'
 
@@ -33,23 +33,23 @@ but
     plz console.loge with 'such impossible'
 wow
 
-many woof is 'doges only' and cat not 'doge' or cat is 'not a doge'
+many woofn is 'doges only' and cat not 'doge' or cat is 'not a doge'
     plz console.loge with {such: 'doge'}
 wow
 
-rly woof is 'doges only' and cat not 'doge' or cat is 'not a doge'
+rly woofn is 'doges only' and cat not 'doge' or cat is 'not a doge'
     plz console.loge with {such: 'doge', wow: 'dogee'}
 wow
 
-much very woof as 1 next woof smaller 3 next woof more 1
+much very woofn as 1 next woofn smaller 3 next woofn more 1
     plz console.loge with {such: 'doge'}
 wow
 
 shh doge style
 very science is 4
-           much  very so as 1 next so smaller 10 next so more 1
-    rly so bigger 2
-                   plz console.loge with {such: so}
+           much  very baz as 1 next baz smaller 10 next baz more 1
+    rly baz bigger 2
+                   plz console.loge with {baz: s}
       wow
                       wow
 
@@ -65,9 +65,14 @@ very regex2 is new RegExp with 'doge', 'g'
 
 very arr is new Array with 0
 
-obj is new Object
+very myObj is new Object
 
-module.exports is woof
+jsony is obj
+ name: 'blah'
+wow
+
+shh module.exports = woofn
+woof woofn
 
 shh example http server
 so http
