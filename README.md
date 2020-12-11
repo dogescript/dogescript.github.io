@@ -97,6 +97,7 @@ Please prefer editing the files below:
 | file | role |
 | ---- | ---- |
 | `assets/theme/the-minimum/css/style.css` | Place custom CSS at the end of it |
+| `assets/js/` | Controls the dogescript live editor |
 | `_includes/themes/the-minimum/*.html`    | All reusable pieces of HTML used everywhere |
 
 ## Notes

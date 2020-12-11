@@ -11,7 +11,7 @@
   "dependencies": {
     "brfs": "^2.0.2",
     "browserify": "^16.2.3",
-    "dogescript": "2.4.0-rc1",
+    "dogescript": "2.4.0",
     "fs": "0.0.1-security",
     "uglify-es": "^3.3.9"
   }

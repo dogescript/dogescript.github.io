@@ -8,6 +8,8 @@ To re-generate the bundle assets
 
 ## Updating dogescript version
 
-The `dogescript` dependency is currently [loaded from github](https://medium.com/@jonchurch/use-github-branch-as-dependency-in-package-json-5eb609c81f1a). 
+Update the package.json version.
 
-It points to commit hash: `26a56d5`.
+### Load from Github
+
+The `dogescript` can be [loaded from github](https://medium.com/@jonchurch/use-github-branch-as-dependency-in-package-json-5eb609c81f1a) pointing to a commit hash.
